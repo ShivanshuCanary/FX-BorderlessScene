@@ -33,13 +33,13 @@ import javafx.stage.StageStyle;
 public class BorderlessScene extends Scene {
 
 	/** The controller. */
-	private BorderlessController controller;
+	public BorderlessController controller;
 
 	/** The root. */
-	private BorderlessPane root;
+	public BorderlessPane root;
 
 	/** The Stage. */
-	private Stage stage;
+	public Stage stage;
 
 	/**
 	 * The constructor.
