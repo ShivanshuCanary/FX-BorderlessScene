@@ -26,57 +26,57 @@ import com.goxr3plus.fxborderlessscene.window.TransparentWindow;
 public class BorderlessController {
 
 	/** The stage. */
-	private Stage stage;
+	public Stage stage;
 
 	/** The prev size. */
-	Delta prevSize;
+	public Delta prevSize;
 
 	/** The prev pos. */
-	Delta prevPos;
+	public Delta prevPos;
 
 	/** The maximized. */
-	private SimpleBooleanProperty maximized;
+	public SimpleBooleanProperty maximized;
 
 	/** The resizable **/
-	private SimpleBooleanProperty resizable;
+	public SimpleBooleanProperty resizable;
 
 	/** The snap enabled */
-	private SimpleBooleanProperty snap;
+	public SimpleBooleanProperty snap;
 
 	/** The snapped. */
-	private boolean snapped;
+	public boolean snapped;
 
 	/** The left pane. */
 	@FXML
-	private Pane leftPane;
+	public Pane leftPane;
 
 	/** The right pane. */
 	@FXML
-	private Pane rightPane;
+	public Pane rightPane;
 
 	/** The top pane. */
 	@FXML
-	private Pane topPane;
+	public Pane topPane;
 
 	/** The bottom pane. */
 	@FXML
-	private Pane bottomPane;
+	public Pane bottomPane;
 
 	/** The top left pane. */
 	@FXML
-	private Pane topLeftPane;
+	public Pane topLeftPane;
 
 	/** The top right pane. */
 	@FXML
-	private Pane topRightPane;
+	public Pane topRightPane;
 
 	/** The bottom left pane. */
 	@FXML
-	private Pane bottomLeftPane;
+	public Pane bottomLeftPane;
 
 	/** The bottom right pane. */
 	@FXML
-	private Pane bottomRightPane;
+	public Pane bottomRightPane;
 
 	/** The bottom. */
 	String bottom = "bottom";
@@ -84,7 +84,7 @@ public class BorderlessController {
 	/**
 	 * Transparent Window used to show how the window will be resized
 	 */
-	private TransparentWindow transparentWindow;
+	public TransparentWindow transparentWindow;
 
 	/**
 	 * The constructor.
