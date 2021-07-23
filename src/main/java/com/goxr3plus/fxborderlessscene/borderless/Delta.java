@@ -16,4 +16,12 @@ public class Delta {
 	
 	/** The y. */
 	public Double y;
+
+	public Delta() {
+	}
+
+	public Delta(Double x, Double y) {
+		this.x = x;
+		this.y = y;
+	}
 }
