@@ -257,6 +257,10 @@ public class BorderlessController {
 
 		// Dragging moves the application around.
 		node.setOnMouseDragged(m -> {
+			if(delta.x == null || delta.y == null ||
+					eventSource.x == null || eventSource.y == null){
+				return;
+			}
 			if (m.isPrimaryButtonDown()) {
 
 				// Move x axis.
@@ -416,7 +420,7 @@ public class BorderlessController {
 					return;
 				}
 
-				if ((MouseButton.PRIMARY.equals(m.getButton())) && (m.getScreenX() != eventSource.x)) {
+				if ((MouseButton.PRIMARY.equals(m.getButton())) && (eventSource.x != null && m.getScreenX() != eventSource.x)) {
 					Rectangle2D screen = Screen.getScreensForRectangle(m.getScreenX(), m.getScreenY(), 1, 1).get(0).getVisualBounds();
 
 					// Aero Snap Left.
