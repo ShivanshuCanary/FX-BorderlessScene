@@ -270,7 +270,11 @@ public class BorderlessController {
 					if (m.getScreenY() > eventSource.y) {
 						snapOff();
 					} else {
-						Rectangle2D screen = Screen.getScreensForRectangle(m.getScreenX(), m.getScreenY(), 1, 1).get(0).getVisualBounds();
+						ObservableList<Screen> screens = Screen.getScreensForRectangle(m.getScreenX(), m.getScreenY(), 1, 1);
+						if (screens.isEmpty()) {
+							return;
+						}
+						Rectangle2D screen = screens.get(0).getVisualBounds();
 						stage.setHeight(screen.getHeight());
 					}
 				} else {
@@ -421,8 +425,11 @@ public class BorderlessController {
 				}
 
 				if ((MouseButton.PRIMARY.equals(m.getButton())) && (eventSource.x != null && m.getScreenX() != eventSource.x)) {
-					Rectangle2D screen = Screen.getScreensForRectangle(m.getScreenX(), m.getScreenY(), 1, 1).get(0).getVisualBounds();
-
+					ObservableList<Screen> screens = Screen.getScreensForRectangle(m.getScreenX(), m.getScreenY(), 1, 1);
+					if (screens.isEmpty()) {
+						return;
+					}
+					Rectangle2D screen = screens.get(0).getVisualBounds();
 					// Aero Snap Left.
 					if (m.getScreenX() <= screen.getMinX()) {
 						snapLeft(screen);
