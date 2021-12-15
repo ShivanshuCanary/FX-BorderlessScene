@@ -243,7 +243,7 @@ public class BorderlessController {
 				delta.x = m.getSceneX(); //getX()
 				delta.y = m.getSceneY(); //getY()
 
-				if (maximized.get() || snapped) {
+				if ((maximized.get() || snapped) && prevSize.x!=null && prevSize.y!=null) {
 					delta.x = prevSize.x * (m.getSceneX() / stage.getWidth());//(m.getX() / stage.getWidth())
 					delta.y = prevSize.y * (m.getSceneY() / stage.getHeight());//(m.getY() / stage.getHeight())
 				} else {
